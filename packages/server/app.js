@@ -24,6 +24,7 @@ const redirectHost = new URL(redirectUri).host;
 
 // views and assets
 const staticDir = path.resolve(`${__dirname}/../client/build`);
+console.log(staticDir)
 // const staticDir = `${__dirname}/dist`;
 const viewDir = `${__dirname}/server/views`;
 
@@ -67,7 +68,7 @@ const headers = {
     crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: {
         directives: {
-            'default-src': 'self',
+            // 'default-src': 'self',
             styleSrc: ["'self'"],
             scriptSrc: ["'self'", 'https://appssdk.zoom.us/sdk.min.js'],
             imgSrc: ["'self'", `https://${redirectHost}`],
@@ -78,7 +79,7 @@ const headers = {
     },
 };
 
-app.use(helmet(headers));
+// app.use(helmet(headers));
 
 app.use(express.json());
 app.use(compression());
