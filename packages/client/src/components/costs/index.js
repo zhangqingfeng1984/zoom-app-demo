@@ -1,5 +1,5 @@
-export const TotalCosts = ()=>{
+export const TotalCosts = ({value})=>{
     return (
-        <div>Total Costs: $15</div>
+        <div>Total Costs: ${value}</div>
     )
 }

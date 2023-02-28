@@ -1,10 +1,14 @@
+body{
+  color: #525050;
+}
 .app{
   padding: 20px;
 }
 .appHead{
   text-align: center;
-  color: pink;
+  animation: animi;
 }
+ 
 .hbox{
   display: flex;
   justify-content: center;
@@ -22,4 +26,7 @@ table td {
 .tableWrapper{
   height: 300px;
   overflow: auto;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

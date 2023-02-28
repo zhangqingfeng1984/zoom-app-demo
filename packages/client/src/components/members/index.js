@@ -1,5 +1,5 @@
-export const Members = ()=>{
+export const Members = ({value})=>{
     return (
-        <div>Total Members: 15</div>
+        <div>Total Members: {value}</div>
     )
 }
