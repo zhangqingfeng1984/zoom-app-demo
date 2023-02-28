@@ -1,0 +1,25 @@
+.app{
+  padding: 20px;
+}
+.appHead{
+  text-align: center;
+  color: pink;
+}
+.hbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hbox > div {
+  padding: 10px;
+}
+table{
+  border-collapse: collapse;
+}
+table td {
+  text-align: center;
+}
+.tableWrapper{
+  height: 300px;
+  overflow: auto;
+}
