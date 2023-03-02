@@ -19,7 +19,7 @@ const useChartOptions = (labels) => {
 
   return {
     chart: {
-      background: 'transparent'
+      // background: 'transparent'
     },
     colors: [
       theme.palette.primary.main,
@@ -35,7 +35,9 @@ const useChartOptions = (labels) => {
     },
     plotOptions: {
       pie: {
-        expandOnClick: false
+        expandOnClick: true,
+        customScale:1,
+        endAngle: 360,
       }
     },
     states: {
@@ -92,7 +94,7 @@ export const OverviewRolesOfParticipantsPie = (props) => {
           height={300}
           options={chartOptions}
           series={chartSeries}
-          type="donut"
+          type="pie"
           width="100%"
         />
         <Stack

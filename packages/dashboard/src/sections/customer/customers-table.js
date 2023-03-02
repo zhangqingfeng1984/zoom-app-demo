@@ -8,14 +8,18 @@ import {
   Stack,
   Table,
   TableBody,
+  Button,
   TableCell,
   TableHead,
   TablePagination,
   TableRow,
-  Typography
+  Typography,
+  Drawer
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { getInitials } from 'src/utils/get-initials';
+import { useState } from 'react'
+import { CostAnalysis } from '../cost-detail';
 
 export const CustomersTable = (props) => {
   const {
@@ -23,7 +27,7 @@ export const CustomersTable = (props) => {
     items = [],
     onDeselectAll,
     onDeselectOne,
-    onPageChange = () => {},
+    onPageChange = () => { },
     onRowsPerPageChange,
     onSelectAll,
     onSelectOne,
@@ -34,7 +38,10 @@ export const CustomersTable = (props) => {
 
   const selectedSome = (selected.length > 0) && (selected.length < items.length);
   const selectedAll = (items.length > 0) && (selected.length === items.length);
-
+  const [showDrawer, setShowDrawer] = useState(false);
+  const toggleDrawer = () => {
+    setShowDrawer(!showDrawer)
+  }
   return (
     <Card>
       <Scrollbar>
@@ -68,7 +75,13 @@ export const CustomersTable = (props) => {
                   Phone
                 </TableCell>
                 <TableCell>
-                  Signed Up
+                  C LEVEL
+                </TableCell>
+                <TableCell>
+                  Meeting Cost
+                </TableCell>
+                <TableCell>
+                  Actions
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -82,6 +95,7 @@ export const CustomersTable = (props) => {
                     hover
                     key={customer.id}
                     selected={isSelected}
+
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -119,7 +133,13 @@ export const CustomersTable = (props) => {
                       {customer.phone}
                     </TableCell>
                     <TableCell>
-                      {createdAt}
+                      C14
+                    </TableCell>
+                    <TableCell>
+                      $100.00
+                    </TableCell>
+                    <TableCell>
+                      <Button color="primary" onClick={toggleDrawer}>review</Button>
                     </TableCell>
                   </TableRow>
                 );
@@ -137,6 +157,13 @@ export const CustomersTable = (props) => {
         rowsPerPage={rowsPerPage}
         rowsPerPageOptions={[5, 10, 25]}
       />
+      <Drawer
+        anchor='right'
+        open={showDrawer}
+        onClose={() => { toggleDrawer() }}
+      >
+        <CostAnalysis />
+      </Drawer>
     </Card>
   );
 };

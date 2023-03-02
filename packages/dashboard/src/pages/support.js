@@ -1,7 +1,17 @@
 import Head from 'next/head';
-import { Box, Container, Stack, Typography } from '@mui/material';
-import { SettingsNotifications } from 'src/sections/settings/settings-notifications';
-import { SettingsPassword } from 'src/sections/settings/settings-password';
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  List,
+  ListItemText,
+  ListItemAvatar,
+  ListItemButton,
+  Avatar,
+  Paper,
+  Divider
+} from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
 const Page = () => (
@@ -20,14 +30,54 @@ const Page = () => (
     >
       <Container maxWidth="lg">
         <Stack spacing={3}>
-          <Typography variant="h6">
+          <Typography variant="h4">
             Support Information
           </Typography>
-          <Typography variant="h7">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut natus accusamus aliquam officia et doloribus voluptate pariatur magnam sed. Laudantium asperiores cupiditate, illum beatae quasi ab dicta accusantium consectetur.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut natus accusamus aliquam officia et doloribus voluptate pariatur magnam sed. Laudantium asperiores cupiditate, illum beatae quasi ab dicta accusantium consectetur.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut natus accusamus aliquam officia et doloribus voluptate pariatur magnam sed. Laudantium asperiores cupiditate, illum beatae quasi ab dicta accusantium consectetur.
-          </Typography>
+          <Paper elevation={3}>
+            <List>
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar/>
+                </ListItemAvatar>
+                <ListItemText primary="General Support for Citi Cards" secondary="1-800-950-5114" />
+              </ListItemButton>
+              <Divider />
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar />
+                </ListItemAvatar>
+                <ListItemText primary="Servicio al cliente español" secondary="1-800-947-9100" />
+              </ListItemButton>
+              <Divider />
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar />
+                </ListItemAvatar>
+                <ListItemText primary="General Support & Servicing for Costco Anywhere Visa®" secondary="1-855-378-6467" />
+              </ListItemButton>
+              <Divider />
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar />
+                </ListItemAvatar>
+                <ListItemText primary="General Support & Servicing for Costco Anywhere Visa® Business Card" secondary="1-855-378-6468" />
+              </ListItemButton>
+              <Divider />
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar />
+                </ListItemAvatar>
+                <ListItemText primary="Collections Servicing Costco" secondary="1-855-805-5486" />
+              </ListItemButton>
+              <Divider />
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar />
+                </ListItemAvatar>
+                <ListItemText primary="Collections Servicing Cards" secondary="1-800-388-2200" />
+              </ListItemButton>
+            </List>
+          </Paper>
         </Stack>
       </Container>
     </Box>
