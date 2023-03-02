@@ -2,14 +2,14 @@ import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, Unstable_Grid2 as Grid } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { OverviewBudget } from 'src/sections/overview/overview-budget';
-import { OverviewLatestOrders } from 'src/sections/overview/overview-latest-orders';
-import { OverviewLatestProducts } from 'src/sections/overview/overview-latest-products';
-import { OverviewSales } from 'src/sections/overview/overview-sales';
-import { OverviewTasksProgress } from 'src/sections/overview/overview-tasks-progress';
-import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
-import { OverviewTotalProfit } from 'src/sections/overview/overview-total-profit';
-import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
+import { OverviewMeetings } from 'src/sections/overview/overview-meetings';
+import { OverviewClevelCostTable } from 'src/sections/overview/overview-clevel-cost-table';
+import { LatestMeetings } from 'src/sections/overview/overview-latest-meetings';
+import { OverviewMyMeetingCost } from 'src/sections/overview/overview-my-meeting-cost';
+import { DeveloperPercentage } from 'src/sections/overview/overview-developer-percentage';
+import { OverviewParticipants } from 'src/sections/overview/overview-participants';
+import { OverviewTotalCosts } from 'src/sections/overview/overview-total-costs';
+import { OverviewRolesOfParticipantsPie } from 'src/sections/overview/overview-roles-of-participants-pie';
 
 const now = new Date();
 
@@ -37,7 +37,7 @@ const Page = () => (
             sm={6}
             lg={3}
           >
-            <OverviewBudget
+            <OverviewMeetings
               difference={12}
               positive
               sx={{ height: '100%' }}
@@ -49,7 +49,7 @@ const Page = () => (
             sm={6}
             lg={3}
           >
-            <OverviewTotalCustomers
+            <OverviewParticipants
               difference={16}
               positive={false}
               sx={{ height: '100%' }}
@@ -61,7 +61,7 @@ const Page = () => (
             sm={6}
             lg={3}
           >
-            <OverviewTasksProgress
+            <DeveloperPercentage
               sx={{ height: '100%' }}
               value={75.5}
             />
@@ -71,7 +71,7 @@ const Page = () => (
             sm={6}
             lg={3}
           >
-            <OverviewTotalProfit
+            <OverviewTotalCosts
               sx={{ height: '100%' }}
               value="$15k"
             />
@@ -80,7 +80,7 @@ const Page = () => (
             xs={12}
             lg={8}
           >
-            <OverviewSales
+            <OverviewMyMeetingCost
               chartSeries={[
                 {
                   name: 'This year',
@@ -99,9 +99,9 @@ const Page = () => (
             md={6}
             lg={4}
           >
-            <OverviewTraffic
+            <OverviewRolesOfParticipantsPie
               chartSeries={[63, 15, 22]}
-              labels={['Desktop', 'Tablet', 'Phone']}
+              labels={['Managers', 'Developers', 'Other']}
               sx={{ height: '100%' }}
             />
           </Grid>
@@ -110,36 +110,36 @@ const Page = () => (
             md={6}
             lg={4}
           >
-            <OverviewLatestProducts
+            <LatestMeetings
               products={[
                 {
                   id: '5ece2c077e39da27658aa8a9',
                   image: '/assets/products/product-1.png',
-                  name: 'Healthcare Erbology',
+                  name: '2022 Year end meeting',
                   updatedAt: subHours(now, 6).getTime()
                 },
                 {
                   id: '5ece2c0d16f70bff2cf86cd8',
                   image: '/assets/products/product-2.png',
-                  name: 'Makeup Lancome Rouge',
+                  name: 'Department Meeting',
                   updatedAt: subDays(subHours(now, 8), 2).getTime()
                 },
                 {
                   id: 'b393ce1b09c1254c3a92c827',
                   image: '/assets/products/product-5.png',
-                  name: 'Skincare Soja CO',
+                  name: 'Employee performance review',
                   updatedAt: subDays(subHours(now, 1), 1).getTime()
                 },
                 {
                   id: 'a6ede15670da63f49f752c89',
                   image: '/assets/products/product-6.png',
-                  name: 'Makeup Lipstick',
+                  name: 'Team work sprite',
                   updatedAt: subDays(subHours(now, 3), 3).getTime()
                 },
                 {
                   id: 'bcad5524fe3a2f8f8620ceda',
                   image: '/assets/products/product-7.png',
-                  name: 'Healthcare Ritual',
+                  name: 'Application develop startup',
                   updatedAt: subDays(subHours(now, 5), 6).getTime()
                 }
               ]}
@@ -151,7 +151,7 @@ const Page = () => (
             md={12}
             lg={8}
           >
-            <OverviewLatestOrders
+            <OverviewClevelCostTable
               orders={[
                 {
                   id: 'f69f88012978187a6c12897f',

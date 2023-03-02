@@ -80,13 +80,13 @@ const iconMap = {
   )
 };
 
-export const OverviewTraffic = (props) => {
+export const OverviewRolesOfParticipantsPie = (props) => {
   const { chartSeries, labels, sx } = props;
   const chartOptions = useChartOptions(labels);
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Zoom Source" />
+      <CardHeader title="Roles of participants" />
       <CardContent>
         <Chart
           height={300}
@@ -136,7 +136,7 @@ export const OverviewTraffic = (props) => {
   );
 };
 
-OverviewTraffic.propTypes = {
+OverviewRolesOfParticipantsPie.propTypes = {
   chartSeries: PropTypes.array.isRequired,
   labels: PropTypes.array.isRequired,
   sx: PropTypes.object

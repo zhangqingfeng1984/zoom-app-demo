@@ -24,12 +24,12 @@ const statusMap = {
   refunded: 'error'
 };
 
-export const OverviewLatestOrders = (props) => {
+export const OverviewClevelCostTable = (props) => {
   const { orders = [], sx } = props;
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Activities" />
+      <CardHeader title="C Level, Cost" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
@@ -43,6 +43,12 @@ export const OverviewLatestOrders = (props) => {
                 </TableCell>
                 <TableCell sortDirection="desc">
                   Date
+                </TableCell>
+                <TableCell sortDirection="desc">
+                  C Level
+                </TableCell>
+                <TableCell sortDirection="desc">
+                  Cost
                 </TableCell>
                 <TableCell>
                   Status
@@ -68,8 +74,14 @@ export const OverviewLatestOrders = (props) => {
                       {createdAt}
                     </TableCell>
                     <TableCell>
+                      {"C12"}
+                    </TableCell>
+                    <TableCell>
+                      {"$10.00"}
+                    </TableCell>
+                    <TableCell>
                       <SeverityPill color={statusMap[order.status]}>
-                        INACTIVE
+                        {order.status}
                       </SeverityPill>
                     </TableCell>
                   </TableRow>
@@ -98,7 +110,7 @@ export const OverviewLatestOrders = (props) => {
   );
 };
 
-OverviewLatestOrders.prototype = {
+OverviewClevelCostTable.prototype = {
   orders: PropTypes.array,
   sx: PropTypes.object
 };

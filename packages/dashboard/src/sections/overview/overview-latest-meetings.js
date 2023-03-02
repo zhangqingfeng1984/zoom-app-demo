@@ -17,7 +17,7 @@ import {
   SvgIcon
 } from '@mui/material';
 
-export const OverviewLatestProducts = (props) => {
+export const LatestMeetings = (props) => {
   const { products = [], sx } = props;
 
   return (
@@ -93,7 +93,7 @@ export const OverviewLatestProducts = (props) => {
   );
 };
 
-OverviewLatestProducts.propTypes = {
+LatestMeetings.propTypes = {
   products: PropTypes.array,
   sx: PropTypes.object
 };

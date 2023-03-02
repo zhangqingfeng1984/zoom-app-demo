@@ -104,7 +104,7 @@ const useChartOptions = () => {
   };
 };
 
-export const OverviewSales = (props) => {
+export const OverviewMyMeetingCost = (props) => {
   const { chartSeries, sx } = props;
   const chartOptions = useChartOptions();
 
@@ -121,10 +121,10 @@ export const OverviewSales = (props) => {
               </SvgIcon>
             )}
           >
-            Sync
+            refresh
           </Button>
         )}
-        title="Zoom Costs"
+        title="Meeting costs"
       />
       <CardContent>
         <Chart
@@ -153,7 +153,7 @@ export const OverviewSales = (props) => {
   );
 };
 
-OverviewSales.protoTypes = {
+OverviewMyMeetingCost.protoTypes = {
   chartSeries: PropTypes.array.isRequired,
   sx: PropTypes.object
 };
