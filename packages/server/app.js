@@ -24,7 +24,7 @@ const redirectHost = new URL(redirectUri).host;
 
 // views and assets
 const staticDir = path.resolve(`${__dirname}/../client/build`);
-console.log(staticDir)
+console.log(staticDir);
 // const staticDir = `${__dirname}/dist`;
 const viewDir = `${__dirname}/server/views`;
 

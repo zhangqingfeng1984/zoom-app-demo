@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 import {
   Box,
   Container,
@@ -10,37 +10,36 @@ import {
   ListItemButton,
   Avatar,
   Paper,
-  Divider, SvgIcon
-} from '@mui/material';
-import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon'
+  Divider,
+  SvgIcon,
+} from "@mui/material";
+import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
+import PhoneIcon from "@heroicons/react/24/solid/PhoneIcon";
 const Page = () => (
   <>
     <Head>
-      <title>
-        Support
-      </title>
+      <title>Support</title>
     </Head>
     <Box
       component="main"
       sx={{
         flexGrow: 1,
-        py: 8
+        py: 8,
       }}
     >
       <Container maxWidth="lg">
         <Stack spacing={3}>
-          <Typography variant="h4">
-            Support Information
-          </Typography>
+          <Typography variant="h4">Support Information</Typography>
           <Paper elevation={3}>
             <List>
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
@@ -50,10 +49,12 @@ const Page = () => (
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
@@ -63,36 +64,48 @@ const Page = () => (
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="General Support & Servicing for Costco Anywhere Visa®" secondary="1-855-378-6467" />
+                <ListItemText
+                  primary="General Support & Servicing for Costco Anywhere Visa®"
+                  secondary="1-855-378-6467"
+                />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="General Support & Servicing for Costco Anywhere Visa® Business Card" secondary="1-855-378-6468" />
+                <ListItemText
+                  primary="General Support & Servicing for Costco Anywhere Visa® Business Card"
+                  secondary="1-855-378-6468"
+                />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
@@ -102,10 +115,12 @@ const Page = () => (
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar sx={{
-                    backgroundColor: 'theme.primary',
-                  }}>
-                    <SvgIcon >
+                  <Avatar
+                    sx={{
+                      backgroundColor: "theme.primary",
+                    }}
+                  >
+                    <SvgIcon>
                       <PhoneIcon />
                     </SvgIcon>
                   </Avatar>
@@ -120,10 +135,6 @@ const Page = () => (
   </>
 );
 
-Page.getLayout = (page) => (
-  <DashboardLayout>
-    {page}
-  </DashboardLayout>
-);
+Page.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
 export default Page;

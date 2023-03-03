@@ -1,7 +1,7 @@
-import { formatDistanceToNow } from 'date-fns';
-import PropTypes from 'prop-types';
-import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
-import EllipsisVerticalIcon from '@heroicons/react/24/solid/EllipsisVerticalIcon';
+import { formatDistanceToNow } from "date-fns";
+import PropTypes from "prop-types";
+import ArrowRightIcon from "@heroicons/react/24/solid/ArrowRightIcon";
+import EllipsisVerticalIcon from "@heroicons/react/24/solid/EllipsisVerticalIcon";
 import {
   Box,
   Button,
@@ -14,8 +14,8 @@ import {
   ListItemButton,
   ListItemAvatar,
   ListItemText,
-  SvgIcon
-} from '@mui/material';
+  SvgIcon,
+} from "@mui/material";
 
 export const LatestMeetings = (props) => {
   const { products = [], sx, onClick } = props;
@@ -29,42 +29,34 @@ export const LatestMeetings = (props) => {
           const ago = formatDistanceToNow(product.updatedAt);
 
           return (
-            <ListItemButton
-              divider={hasDivider}
-              key={product.id}
-              onClick={onClick}
-            >
+            <ListItemButton divider={hasDivider} key={product.id} onClick={onClick}>
               <ListItemAvatar>
-                {
-                  product.image
-                    ? (
-                      <Box
-                        component="img"
-                        src={product.image}
-                        sx={{
-                          borderRadius: 1,
-                          height: 48,
-                          width: 48
-                        }}
-                      />
-                    )
-                    : (
-                      <Box
-                        sx={{
-                          borderRadius: 1,
-                          backgroundColor: 'neutral.200',
-                          height: 48,
-                          width: 48
-                        }}
-                      />
-                    )
-                }
+                {product.image ? (
+                  <Box
+                    component="img"
+                    src={product.image}
+                    sx={{
+                      borderRadius: 1,
+                      height: 48,
+                      width: 48,
+                    }}
+                  />
+                ) : (
+                  <Box
+                    sx={{
+                      borderRadius: 1,
+                      backgroundColor: "neutral.200",
+                      height: 48,
+                      width: 48,
+                    }}
+                  />
+                )}
               </ListItemAvatar>
               <ListItemText
                 primary={product.name}
-                primaryTypographyProps={{ variant: 'subtitle1' }}
+                primaryTypographyProps={{ variant: "subtitle1" }}
                 secondary={`Updated ${ago} ago`}
-                secondaryTypographyProps={{ variant: 'body2' }}
+                secondaryTypographyProps={{ variant: "body2" }}
               />
               <IconButton edge="end">
                 <SvgIcon>
@@ -76,14 +68,14 @@ export const LatestMeetings = (props) => {
         })}
       </List>
       <Divider />
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
+      <CardActions sx={{ justifyContent: "flex-end" }}>
         <Button
           color="inherit"
-          endIcon={(
+          endIcon={
             <SvgIcon fontSize="small">
               <ArrowRightIcon />
             </SvgIcon>
-          )}
+          }
           size="small"
           variant="text"
         >
@@ -96,5 +88,5 @@ export const LatestMeetings = (props) => {
 
 LatestMeetings.propTypes = {
   products: PropTypes.array,
-  sx: PropTypes.object
+  sx: PropTypes.object,
 };

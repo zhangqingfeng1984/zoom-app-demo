@@ -1,15 +1,15 @@
-body{
+body {
   color: #525050;
 }
-.app{
+.app {
   padding: 20px;
 }
-.appHead{
+.appHead {
   text-align: center;
   animation: animi;
 }
- 
-.hbox{
+
+.hbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,13 +17,13 @@ body{
 .hbox > div {
   padding: 10px;
 }
-table{
+table {
   border-collapse: collapse;
 }
 table td {
   text-align: center;
 }
-.tableWrapper{
+.tableWrapper {
   height: 300px;
   overflow: auto;
 }

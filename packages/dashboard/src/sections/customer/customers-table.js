@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { format } from 'date-fns';
+import PropTypes from "prop-types";
+import { format } from "date-fns";
 import {
   Avatar,
   Box,
@@ -15,13 +15,13 @@ import {
   TablePagination,
   TableRow,
   Typography,
-  Drawer
-} from '@mui/material';
-import { Scrollbar } from 'src/components/scrollbar';
-import { getInitials } from 'src/utils/get-initials';
-import { useState } from 'react'
-import { CostAnalysis } from '../cost-detail';
-import EyeIcon from '@heroicons/react/24/solid/EyeIcon'
+  Drawer,
+} from "@mui/material";
+import { Scrollbar } from "src/components/scrollbar";
+import { getInitials } from "src/utils/get-initials";
+import { useState } from "react";
+import { CostAnalysis } from "../cost-detail";
+import EyeIcon from "@heroicons/react/24/solid/EyeIcon";
 
 export const CustomersTable = (props) => {
   const {
@@ -29,21 +29,21 @@ export const CustomersTable = (props) => {
     items = [],
     onDeselectAll,
     onDeselectOne,
-    onPageChange = () => { },
+    onPageChange = () => {},
     onRowsPerPageChange,
     onSelectAll,
     onSelectOne,
     page = 0,
     rowsPerPage = 0,
-    selected = []
+    selected = [],
   } = props;
 
-  const selectedSome = (selected.length > 0) && (selected.length < items.length);
-  const selectedAll = (items.length > 0) && (selected.length === items.length);
+  const selectedSome = selected.length > 0 && selected.length < items.length;
+  const selectedAll = items.length > 0 && selected.length === items.length;
   const [showDrawer, setShowDrawer] = useState(false);
   const toggleDrawer = () => {
-    setShowDrawer(!showDrawer)
-  }
+    setShowDrawer(!showDrawer);
+  };
   return (
     <Card>
       <Scrollbar>
@@ -64,41 +64,22 @@ export const CustomersTable = (props) => {
                     }}
                   />
                 </TableCell>
-                <TableCell>
-                  Name
-                </TableCell>
-                <TableCell>
-                  Email
-                </TableCell>
-                <TableCell>
-                  Location
-                </TableCell>
-                <TableCell>
-                  Phone
-                </TableCell>
-                <TableCell>
-                  C LEVEL
-                </TableCell>
-                <TableCell>
-                  Meeting Cost
-                </TableCell>
-                <TableCell>
-                  Actions
-                </TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Email</TableCell>
+                <TableCell>Location</TableCell>
+                <TableCell>Phone</TableCell>
+                <TableCell>C LEVEL</TableCell>
+                <TableCell>Meeting Cost</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {items.map((customer) => {
                 const isSelected = selected.includes(customer.id);
-                const createdAt = format(customer.createdAt, 'dd/MM/yyyy');
+                const createdAt = format(customer.createdAt, "dd/MM/yyyy");
 
                 return (
-                  <TableRow
-                    hover
-                    key={customer.id}
-                    selected={isSelected}
-
-                  >
+                  <TableRow hover key={customer.id} selected={isSelected}>
                     <TableCell padding="checkbox">
                       <Checkbox
                         checked={isSelected}
@@ -112,38 +93,22 @@ export const CustomersTable = (props) => {
                       />
                     </TableCell>
                     <TableCell>
-                      <Stack
-                        alignItems="center"
-                        direction="row"
-                        spacing={2}
-                      >
-                        <Avatar src={customer.avatar}>
-                          {getInitials(customer.name)}
-                        </Avatar>
-                        <Typography variant="subtitle2">
-                          {customer.name}
-                        </Typography>
+                      <Stack alignItems="center" direction="row" spacing={2}>
+                        <Avatar src={customer.avatar}>{getInitials(customer.name)}</Avatar>
+                        <Typography variant="subtitle2">{customer.name}</Typography>
                       </Stack>
                     </TableCell>
-                    <TableCell>
-                      {customer.email}
-                    </TableCell>
+                    <TableCell>{customer.email}</TableCell>
                     <TableCell>
                       {customer.address.city}, {customer.address.state}, {customer.address.country}
                     </TableCell>
-                    <TableCell>
-                      {customer.phone}
-                    </TableCell>
-                    <TableCell>
-                      C14
-                    </TableCell>
-                    <TableCell>
-                      $100.00
-                    </TableCell>
+                    <TableCell>{customer.phone}</TableCell>
+                    <TableCell>C14</TableCell>
+                    <TableCell>$100.00</TableCell>
                     <TableCell>
                       <Button color="primary" onClick={toggleDrawer} ico>
                         <SvgIcon>
-                          <EyeIcon/>
+                          <EyeIcon />
                         </SvgIcon>
                       </Button>
                     </TableCell>
@@ -164,9 +129,11 @@ export const CustomersTable = (props) => {
         rowsPerPageOptions={[5, 10, 25]}
       />
       <Drawer
-        anchor='right'
+        anchor="right"
         open={showDrawer}
-        onClose={() => { toggleDrawer() }}
+        onClose={() => {
+          toggleDrawer();
+        }}
       >
         <CostAnalysis />
       </Drawer>
@@ -185,5 +152,5 @@ CustomersTable.propTypes = {
   onSelectOne: PropTypes.func,
   page: PropTypes.number,
   rowsPerPage: PropTypes.number,
-  selected: PropTypes.array
+  selected: PropTypes.array,
 };

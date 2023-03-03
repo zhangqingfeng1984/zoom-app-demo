@@ -58,24 +58,24 @@ Redirect URL for OAuth: https://xxxxx.ngrok.io/auth
 
 #### OAuth allow list
 
-- `https://example.ngrok.io`
+-   `https://example.ngrok.io`
 
 #### Domain allow list
 
-- `appssdk.zoom.us`
-- `ngrok.io`
+-   `appssdk.zoom.us`
+-   `ngrok.io`
 
 ### Config: Information
 
 The following information is required to activate your application:
 
-- Basic Information
-    - App name
-    - Short description
-    - Long description (entering a short message here is fine for now)
-- Developer Contact Information
-    - Name
-    - Email address
+-   Basic Information
+    -   App name
+    -   Short description
+    -   Long description (entering a short message here is fine for now)
+-   Developer Contact Information
+    -   Name
+    -   Email address
 
 > NOTE: if you intend to publish your application on the Zoom Apps Marketplace, more information will be required in this section before submitting.
 
@@ -86,12 +86,13 @@ sections:
 
 #### APIs
 
-- shareApp
+-   shareApp
 
 ### Scopes
 
 Ensure that the following scope is selected on the Scopes tab:
-- `zoomapp:inmeeting`
+
+-   `zoomapp:inmeeting`
 
 ### Config `.env`
 
@@ -115,9 +116,9 @@ If you are a [Zoom for Government (ZfG)](https://www.zoomgov.com/) customer you 
 the base URL used for Zoom. This will allow you to adjust to the different Marketplace and API Base URLs used by ZfG
 customers.
 
-**Marketplace URL:** marketplace.*zoomgov.com*
+**Marketplace URL:** marketplace._zoomgov.com_
 
-**API Base URL:** api.*zoomgov.com*
+**API Base URL:** api._zoomgov.com_
 
 ## Start the App
 
@@ -148,7 +149,7 @@ NODE_ENV=production npm start
 
 # Windows
 set NODE_ENV=production && npm start
-````
+```
 
 ## Usage
 
@@ -185,4 +186,5 @@ our [Developer Forum](https://devforum.zoom.us). Priority support is also availa
 with [Premier Developer Support](https://zoom.us/docs/en-us/developer-support-plans.html) plans.
 
 ### Documentation
+
 Make sure to review [our documentation](https://marketplace.zoom.us/docs/zoom-apps/introduction/) as a reference when building your Zoom Apps.

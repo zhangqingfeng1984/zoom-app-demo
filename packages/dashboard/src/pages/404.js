@@ -1,56 +1,45 @@
-import Head from 'next/head';
-import NextLink from 'next/link';
-import ArrowLeftIcon from '@heroicons/react/24/solid/ArrowLeftIcon';
-import { Box, Button, Container, SvgIcon, Typography } from '@mui/material';
+import Head from "next/head";
+import NextLink from "next/link";
+import ArrowLeftIcon from "@heroicons/react/24/solid/ArrowLeftIcon";
+import { Box, Button, Container, SvgIcon, Typography } from "@mui/material";
 
 const Page = () => (
   <>
     <Head>
-      <title>
-        404 
-      </title>
+      <title>404</title>
     </Head>
     <Box
       component="main"
       sx={{
-        alignItems: 'center',
-        display: 'flex',
+        alignItems: "center",
+        display: "flex",
         flexGrow: 1,
-        minHeight: '100%'
+        minHeight: "100%",
       }}
     >
       <Container maxWidth="md">
         <Box
           sx={{
-            alignItems: 'center',
-            display: 'flex',
-            flexDirection: 'column'
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-     
-          <Typography
-            align="center"
-            sx={{ mb: 3 }}
-            variant="h3"
-          >
+          <Typography align="center" sx={{ mb: 3 }} variant="h3">
             The page you are looking for isn’t here
           </Typography>
-          <Typography
-            align="center"
-            color="text.secondary"
-            variant="body1"
-          >
-            You either tried some shady route or you came here by mistake.
-            Whichever it is, try using the navigation
+          <Typography align="center" color="text.secondary" variant="body1">
+            You either tried some shady route or you came here by mistake. Whichever it is, try
+            using the navigation
           </Typography>
           <Button
             component={NextLink}
             href="/"
-            startIcon={(
+            startIcon={
               <SvgIcon fontSize="small">
                 <ArrowLeftIcon />
               </SvgIcon>
-            )}
+            }
             sx={{ mt: 3 }}
             variant="contained"
           >

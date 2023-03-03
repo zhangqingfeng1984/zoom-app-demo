@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import ComputerDesktopIcon from '@heroicons/react/24/solid/ComputerDesktopIcon';
-import DeviceTabletIcon from '@heroicons/react/24/solid/DeviceTabletIcon';
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
+import PropTypes from "prop-types";
+import ComputerDesktopIcon from "@heroicons/react/24/solid/ComputerDesktopIcon";
+import DeviceTabletIcon from "@heroicons/react/24/solid/DeviceTabletIcon";
+import PhoneIcon from "@heroicons/react/24/solid/PhoneIcon";
 import {
   Box,
   Card,
@@ -10,9 +10,9 @@ import {
   Stack,
   SvgIcon,
   Typography,
-  useTheme
-} from '@mui/material';
-import { Chart } from 'src/components/chart';
+  useTheme,
+} from "@mui/material";
+import { Chart } from "src/components/chart";
 
 const useChartOptions = (labels) => {
   const theme = useTheme();
@@ -21,46 +21,42 @@ const useChartOptions = (labels) => {
     chart: {
       // background: 'transparent'
     },
-    colors: [
-      theme.palette.primary.main,
-      theme.palette.success.main,
-      theme.palette.warning.main
-    ],
+    colors: [theme.palette.primary.main, theme.palette.success.main, theme.palette.warning.main],
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     labels,
     legend: {
-      show: false
+      show: false,
     },
     plotOptions: {
       pie: {
         expandOnClick: true,
-        customScale:1,
+        customScale: 1,
         endAngle: 360,
-      }
+      },
     },
     states: {
       active: {
         filter: {
-          type: 'none'
-        }
+          type: "none",
+        },
       },
       hover: {
         filter: {
-          type: 'none'
-        }
-      }
+          type: "none",
+        },
+      },
     },
     stroke: {
-      width: 0
+      width: 0,
     },
     theme: {
-      mode: theme.palette.mode
+      mode: theme.palette.mode,
     },
     tooltip: {
-      fillSeriesColor: false
-    }
+      fillSeriesColor: false,
+    },
   };
 };
 
@@ -79,7 +75,7 @@ const iconMap = {
     <SvgIcon>
       <PhoneIcon />
     </SvgIcon>
-  )
+  ),
 };
 
 export const OverviewRolesOfParticipantsPie = (props) => {
@@ -90,13 +86,7 @@ export const OverviewRolesOfParticipantsPie = (props) => {
     <Card sx={sx}>
       <CardHeader title="Roles of participants" />
       <CardContent>
-        <Chart
-          height={300}
-          options={chartOptions}
-          series={chartSeries}
-          type="pie"
-          width="100%"
-        />
+        <Chart height={300} options={chartOptions} series={chartSeries} type="pie" width="100%" />
         <Stack
           alignItems="center"
           direction="row"
@@ -111,22 +101,16 @@ export const OverviewRolesOfParticipantsPie = (props) => {
               <Box
                 key={label}
                 sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center'
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
               >
                 {iconMap[label]}
-                <Typography
-                  sx={{ my: 1 }}
-                  variant="h6"
-                >
+                <Typography sx={{ my: 1 }} variant="h6">
                   {label}
                 </Typography>
-                <Typography
-                  color="text.secondary"
-                  variant="subtitle2"
-                >
+                <Typography color="text.secondary" variant="subtitle2">
                   {item}%
                 </Typography>
               </Box>
@@ -141,5 +125,5 @@ export const OverviewRolesOfParticipantsPie = (props) => {
 OverviewRolesOfParticipantsPie.propTypes = {
   chartSeries: PropTypes.array.isRequired,
   labels: PropTypes.array.isRequired,
-  sx: PropTypes.object
+  sx: PropTypes.object,
 };

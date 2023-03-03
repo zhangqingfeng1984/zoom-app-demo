@@ -50,7 +50,7 @@ router.get('/', session, validateQuery, async (req, res, next) => {
         const deeplink = await getDeeplink(accessToken);
 
         // redirect the user to the Zoom Client
-        console.log(deeplink)
+        console.log(deeplink);
         res.redirect(deeplink);
     } catch (e) {
         next(handleError(e));

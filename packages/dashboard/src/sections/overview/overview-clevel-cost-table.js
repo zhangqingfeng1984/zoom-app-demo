@@ -1,6 +1,6 @@
-import { format } from 'date-fns';
-import PropTypes from 'prop-types';
-import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
+import { format } from "date-fns";
+import PropTypes from "prop-types";
+import ArrowRightIcon from "@heroicons/react/24/solid/ArrowRightIcon";
 import {
   Box,
   Button,
@@ -13,14 +13,14 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TableRow
-} from '@mui/material';
-import { Scrollbar } from 'src/components/scrollbar';
-import { SeverityPill } from 'src/components/severity-pill';
+  TableRow,
+} from "@mui/material";
+import { Scrollbar } from "src/components/scrollbar";
+import { SeverityPill } from "src/components/severity-pill";
 
 const statusMap = {
-  Online: 'success',
-  Offline: 'error',
+  Online: "success",
+  Offline: "error",
 };
 
 export const OverviewClevelCostTable = (props) => {
@@ -34,24 +34,12 @@ export const OverviewClevelCostTable = (props) => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>
-                  Soeid
-                </TableCell>
-                <TableCell>
-                  Name
-                </TableCell>
-                <TableCell sortDirection="desc">
-                  Date
-                </TableCell>
-                <TableCell sortDirection="desc">
-                  C Level
-                </TableCell>
-                <TableCell sortDirection="desc">
-                  Cost
-                </TableCell>
-                <TableCell>
-                  Status
-                </TableCell>
+                <TableCell>Soeid</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell sortDirection="desc">Date</TableCell>
+                <TableCell sortDirection="desc">C Level</TableCell>
+                <TableCell sortDirection="desc">Cost</TableCell>
+                <TableCell>Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -59,29 +47,14 @@ export const OverviewClevelCostTable = (props) => {
                 const createdAt = order.createdAt;
 
                 return (
-                  <TableRow
-                    hover
-                    key={order.id}
-                  >
+                  <TableRow hover key={order.id}>
+                    <TableCell>{order.ref}</TableCell>
+                    <TableCell>{order.customer.name}</TableCell>
+                    <TableCell>{createdAt}</TableCell>
+                    <TableCell>{order.clevel}</TableCell>
+                    <TableCell>${order.cost}</TableCell>
                     <TableCell>
-                      {order.ref}
-                    </TableCell>
-                    <TableCell>
-                      {order.customer.name}
-                    </TableCell>
-                    <TableCell>
-                      {createdAt}
-                    </TableCell>
-                    <TableCell>
-                      {order.clevel}
-                    </TableCell>
-                    <TableCell>
-                      ${order.cost}
-                    </TableCell>
-                    <TableCell>
-                      <SeverityPill color={statusMap[order.status]}>
-                        {order.status}
-                      </SeverityPill>
+                      <SeverityPill color={statusMap[order.status]}>{order.status}</SeverityPill>
                     </TableCell>
                   </TableRow>
                 );
@@ -91,14 +64,14 @@ export const OverviewClevelCostTable = (props) => {
         </Box>
       </Scrollbar>
       <Divider />
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
+      <CardActions sx={{ justifyContent: "flex-end" }}>
         <Button
           color="inherit"
-          endIcon={(
+          endIcon={
             <SvgIcon fontSize="small">
               <ArrowRightIcon />
             </SvgIcon>
-          )}
+          }
           size="small"
           variant="text"
         >
@@ -111,5 +84,5 @@ export const OverviewClevelCostTable = (props) => {
 
 OverviewClevelCostTable.prototype = {
   orders: PropTypes.array,
-  sx: PropTypes.object
+  sx: PropTypes.object,
 };
