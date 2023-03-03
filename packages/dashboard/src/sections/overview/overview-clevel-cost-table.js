@@ -19,9 +19,8 @@ import { Scrollbar } from 'src/components/scrollbar';
 import { SeverityPill } from 'src/components/severity-pill';
 
 const statusMap = {
-  pending: 'warning',
-  delivered: 'success',
-  refunded: 'error'
+  Online: 'success',
+  Offline: 'error',
 };
 
 export const OverviewClevelCostTable = (props) => {
@@ -57,7 +56,7 @@ export const OverviewClevelCostTable = (props) => {
             </TableHead>
             <TableBody>
               {orders.map((order) => {
-                const createdAt = format(order.createdAt, 'dd/MM/yyyy');
+                const createdAt = order.createdAt;
 
                 return (
                   <TableRow
@@ -74,10 +73,10 @@ export const OverviewClevelCostTable = (props) => {
                       {createdAt}
                     </TableCell>
                     <TableCell>
-                      {"C12"}
+                      {order.clevel}
                     </TableCell>
                     <TableCell>
-                      {"$10.00"}
+                      ${order.cost}
                     </TableCell>
                     <TableCell>
                       <SeverityPill color={statusMap[order.status]}>

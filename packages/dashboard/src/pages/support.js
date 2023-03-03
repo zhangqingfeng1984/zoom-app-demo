@@ -10,10 +10,10 @@ import {
   ListItemButton,
   Avatar,
   Paper,
-  Divider
+  Divider, SvgIcon
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-
+import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon'
 const Page = () => (
   <>
     <Head>
@@ -37,42 +37,78 @@ const Page = () => (
             <List>
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar/>
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="General Support for Citi Cards" secondary="1-800-950-5114" />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar />
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="Servicio al cliente español" secondary="1-800-947-9100" />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar />
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="General Support & Servicing for Costco Anywhere Visa®" secondary="1-855-378-6467" />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar />
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="General Support & Servicing for Costco Anywhere Visa® Business Card" secondary="1-855-378-6468" />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar />
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="Collections Servicing Costco" secondary="1-855-805-5486" />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar />
+                  <Avatar sx={{
+                    backgroundColor: 'theme.primary',
+                  }}>
+                    <SvgIcon >
+                      <PhoneIcon />
+                    </SvgIcon>
+                  </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary="Collections Servicing Cards" secondary="1-800-388-2200" />
               </ListItemButton>

@@ -11,14 +11,14 @@ import {
   Divider,
   IconButton,
   List,
-  ListItem,
+  ListItemButton,
   ListItemAvatar,
   ListItemText,
   SvgIcon
 } from '@mui/material';
 
 export const LatestMeetings = (props) => {
-  const { products = [], sx } = props;
+  const { products = [], sx, onClick } = props;
 
   return (
     <Card sx={sx}>
@@ -29,9 +29,10 @@ export const LatestMeetings = (props) => {
           const ago = formatDistanceToNow(product.updatedAt);
 
           return (
-            <ListItem
+            <ListItemButton
               divider={hasDivider}
               key={product.id}
+              onClick={onClick}
             >
               <ListItemAvatar>
                 {
@@ -70,7 +71,7 @@ export const LatestMeetings = (props) => {
                   <EllipsisVerticalIcon />
                 </SvgIcon>
               </IconButton>
-            </ListItem>
+            </ListItemButton>
           );
         })}
       </List>

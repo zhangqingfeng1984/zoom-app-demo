@@ -7,6 +7,7 @@ import {
   Checkbox,
   Stack,
   Table,
+  SvgIcon,
   TableBody,
   Button,
   TableCell,
@@ -20,6 +21,7 @@ import { Scrollbar } from 'src/components/scrollbar';
 import { getInitials } from 'src/utils/get-initials';
 import { useState } from 'react'
 import { CostAnalysis } from '../cost-detail';
+import EyeIcon from '@heroicons/react/24/solid/EyeIcon'
 
 export const CustomersTable = (props) => {
   const {
@@ -139,7 +141,11 @@ export const CustomersTable = (props) => {
                       $100.00
                     </TableCell>
                     <TableCell>
-                      <Button color="primary" onClick={toggleDrawer}>review</Button>
+                      <Button color="primary" onClick={toggleDrawer} ico>
+                        <SvgIcon>
+                          <EyeIcon/>
+                        </SvgIcon>
+                      </Button>
                     </TableCell>
                   </TableRow>
                 );

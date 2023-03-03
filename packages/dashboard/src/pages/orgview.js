@@ -11,6 +11,7 @@ import { CustomersTable } from 'src/sections/customer/customers-table';
 import { CustomersSearch } from 'src/sections/customer/customers-search';
 import { applyPagination } from 'src/utils/apply-pagination';
 
+
 const now = new Date();
 
 const data = [
@@ -218,7 +219,7 @@ const Page = () => {
             >
               <Stack spacing={1}>
                 <Typography variant="h4">
-                Members
+                Organization View
                 </Typography>
                 <Stack
                   alignItems="center"
