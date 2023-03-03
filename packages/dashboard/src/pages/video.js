@@ -23,6 +23,15 @@ const Page = () => (
                         Video Demos
                     </Typography>
                     <Rating name="size-large" defaultValue={3.5} precision={0.5} size="small" />
+                    <Typography color="gray" fontSize={14}>
+                        Hints: can't play the video? do the following steps:
+                        <Box>
+                            1. right click the video and select "show all controls"
+                        </Box>
+                        <Box>
+                            2. click play
+                        </Box>
+                    </Typography>
                     <Card>
                         <CardHeader title="zoom-apps" />
                         <CardContent>
@@ -32,7 +41,7 @@ const Page = () => (
                     <Card>
                         <CardHeader title="zoom-dashboard" />
                         <CardContent>
-                            <ReactPlayer autoPlay={true} url="/zoom-apps.mp4"></ReactPlayer>
+                            <ReactPlayer autoPlay={true} url="/zoom-dashboard.mp4"></ReactPlayer>
                         </CardContent>
                     </Card>
                 </Stack>
