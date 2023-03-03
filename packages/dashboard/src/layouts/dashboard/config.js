@@ -63,4 +63,13 @@ export const items = [
       </SvgIcon>
     )
   },
+  {
+    title: 'Video',
+    path: '/video',
+    icon: (
+      <SvgIcon fontSize="small">
+        <UserPlusIcon />
+      </SvgIcon>
+    )
+  },
 ];
